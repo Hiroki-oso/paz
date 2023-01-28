@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block header %} 
+{% include 'snippets/header.html' %} 
+{% endblock %} 
+{% block main %}
+<div class="container">
+    <div class="row">
+        <h3 class="chara_h2">体重 | BMI管理</h3>
+        <div class="col-md-6">
+            <div class="card-body col-md-6">
+                <table class="table col-md-6" style="width: 20rem">
+                    <tbody>
+                        <tr scope="row">
+                            <th>日付</th>
+                            <td>{{object.created_at}}</td>
+                        </tr>
+                        <tr scope="row">
+                            <th>お名前</th>
+                            <td>{{object.username}}</td>
+                        </tr>
+                        <tr scope="row">
+                            <th>身長</th>
+                            <td>{{object.height}} cm</td>
+                        </tr>
+                        <tr scope="row">
+                            <th>体重</th>
+                            <td>{{object.weight}} kg</td>
+                        </tr>
+                        <tr scope="row">
+                            <th>適正体重</th>
+                            <td>{{object.appr_w}} kg</td>
+                        </tr>
+                        <tr scope="row">
+                            <th>BMI</th>
+                            <td>{{object.bmi}}</td>
+                        </tr>
+                        <tr scope="row">
+                            <th>MEMO</th>
+                            <td>{{object.memo}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="delete-page mt-3 ms-4">
+                {% if request.user == object.user %}
+                <a href="{% url 'myapp:delete' object.pk %}" class="btn btn-danger delte-btn ms-5 mb-3" style="width: 5rem">Delete</a>
+                <a href="{% url 'myapp:update' object.pk %}" class="btn btn-info delte-btn ms-5 mb-3" style="width: 5rem">Update</a>
+                {% endif %}
+                <div class="prev-p-detail">
+                    <p>
+                      <a href="{% url 'myapp:list' %}" class="text-primary forward-a">前のページへ</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>
+<script>
+    const ctx = document.getElementById("myChart");
+
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: ["{{object.created_at}}"],
+            datasets: [
+            {
+                label: "体重(kg)",
+                data: ["{{object.weight}}"],
+                backgroundColor: "#ffa500",
+            },
+            {
+                label: "適正体重(kg)",
+                data: ["{{object.appr_w}}"],
+                backgroundColor: "#4169e1",
+            },
+            {
+                label: "BMI",
+                data: ["{{object.bmi}}"],
+                backgroundColor: "#FFB1C1",
+            },
+            ],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    stepSize: 1,
+                    min: 0,
+                    max: 80,
+                },
+            },
+        },
+    });
+</script>
+{% endblock %}

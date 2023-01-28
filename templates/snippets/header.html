@@ -1,0 +1,42 @@
+{% load static %}
+<div class="row">
+    <div class="col col-lg-8 col-md-6 col-sm-4">
+        <nav class="nav mb-3">
+            <ul class="nav-ul">
+                {% if user.is_authenticated %}
+                <div class="ps-5">
+                    <div class="dropdown dd-header mb-5">
+                        <a class="btn" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-list"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li>
+                            <a class="dropdown-item" href="{% url 'myapp:firstinput' %}">基本情報入力</a>
+                            </li>
+                            <li>
+                            <a class="dropdown-item" href="{% url 'myapp:list' %}">体重 | BMI管理一覧</a>
+                            </li>
+                            <li>
+                            <a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a>
+                            </li>
+                        </ul>
+                        <div class="login-user">
+                        <h4 class="login-user-h4">{{user.username}}<span class="login-user-span">ログイン中</span></h4>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <li class="nav-li">
+                <a href="{% url 'myapp:top' %}" class="nav-link">Top</a>
+                </li>
+                <li class="nav-li">
+                <a href="{% url 'accounts:login' %}" class="nav-link">LogIn</a>
+                </li>
+                <li class="nav-li">
+                <a href="{% url 'accounts:signup' %}" class="nav-link">SignIn</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>

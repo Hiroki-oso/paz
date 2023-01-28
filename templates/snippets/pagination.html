@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row ms-2">
+      <div class="col-12 col-md-6 col-sm-4">
+          <nav>
+              <ul class="pagination">
+                  {% if page_obj.has_previous %}
+                  <li class="page-item pre-p">
+                  <a href="?page={{ page.onj.previous_page_number }}"class="page-link page-item">Previous</a>
+                  </li>
+                  {% endif %} {% for num in page_obj.paginator.page_range %}
+                  {% if page_obj.number == num %}
+                  <li class="page-item active num-p">
+                  <a href="#" class="page-link">{{ num }}<span class="sr-only">(current)</span></a>
+                  </li>
+                  {% else %}
+                  <li class="page-item">
+                      <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+                  </li>
+                  {% endif %} {% endfor %} {% if page_obj.has_next %}
+                  <li class="page-item next-p">
+                  <a href="?page={{ page_obj.next_page_number }}" class="page-link">Next</a>
+                  </li>
+                  {% endif %}
+              </ul>
+          </nav>
+      </div>
+  </div>
+</div>

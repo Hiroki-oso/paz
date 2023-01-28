@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block header %}
+{% include 'snippets/header.html' %}
+{% endblock %}
+{% block main %}
+{% include 'snippets/messages.html' %}
+{% if object_list.count == 0 %}
+<h1 class="col-12 col-md-6 col-sm-6 d-flex justify-content-center logout-no-data">メニューの入力画面からデータを入力してください</h1>
+{% else %}
+<div class="container list col-md">
+  <div class="row">
+    <h4 class="char_h2 d-flex justify-content-center mt-3 mb-5">体重 | BMI管理一覧</h4>
+    <table class="table">
+      {% for object in object_list %}
+      <thead>
+        <tr>
+          <th scope="col">日付</th>
+          <th scope="col">お名前</th>
+          <th scope="col">体重</th>
+          <th scope="col">身長</th>
+          <th scope="col">BMI</th>
+          <th scope="col">適正体重</th>
+          <th scope="col">memo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>{{object.created_at}}</th>
+          <td>{{object.username}}</td>
+          <td>{{object.height}}</td>
+          <td>{{object.weight}}</td>
+          <td>{{object.bmi}}</td>
+          <td>{{object.appr_w}}</td>
+          <td>{{object.memo}}</td>
+          <td>
+            <a href="{% url 'myapp:detail' object.pk %}" class="btn btn-primary detail-btn" style="width: 5rem;">Detail</a> 
+          </td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>     
+    </div>
+    {% include 'snippets/pagination.html' %}
+  </div>
+{% endif %}
+</div>
+{% endblock %}
+

@@ -1,0 +1,43 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block header %} 
+{% include 'snippets/header.html' %} 
+{% endblock %} 
+{% block main %}
+<div class="row">
+    <div class="col col col-lg-8 col-md-6 col-sm-4 mx-auto firstinput">
+        <div class="card firstinput mt-5" style="width: 20rem">
+            <form class="form_firstinput" method="POST">
+                {% csrf_token %}
+                <div class="form-group firstinput">
+                    <div class="mb-3">
+                        <label for="" class="form-label ms-5 mt-3">お名前</label>
+                        <input type="text" class="form-control ms-5" id="" aria-describedby="emailHelp" name="username" required>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="" class="form-label ms-5">身長 (cm)</label>
+                        <input type="text" class="form-control ms-5" id="" name="height" placeholder="身長" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label ms-5">体重 (kg)</label>
+                        <input type="text" class="form-control ms-5" id="" name="weight" placeholder="体重" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="hidden" class="form-control ms-5" id="" name="bmi" placeholder="BMI" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="hidden" class="form-control ms-5" id="" name="appr_w" placeholder="適正体重" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label ms-5">Memo</label>
+                        <textarea class="form-control ms-5" id="" rows="3" name="memo" required></textarea>
+                    </div>
+                    <button type="submit" action="" class="submit_firstinput mb-3 ms-5 btn btn-primary">
+                        送信
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock main %}

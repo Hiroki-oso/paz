@@ -1,0 +1,331 @@
+@charset 'utf-8';
+
+:root{
+    /* color */
+    --wh: white;
+    --bl: black;
+    --re: red;
+    --ge: green;
+    --mye: rgb(237, 237, 38);
+    --ye:yellow;
+    --db: rgb(47, 0, 255);
+    
+    /* text */ 
+ 
+    --xxs: 10px;
+    --xs:15px;
+    --s: 25px;
+    --ms: 40px;
+    --ls: 50px;
+    --lm: 60px;
+    --ll: 70px;
+    --xl: 80px:
+
+  
+    /* font family */
+
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+/* ---------- ヘッダー　------------ */
+/* 　*/
+.dd-header {
+    margin-top: 50px;
+    position: absolute;
+    top: 0;
+    left: 2px;
+}
+header {
+    background: #6930c3;
+    display: flex;
+    justify-content: flex-end;
+    height: 125px;
+    max-width: 100%;
+}
+/* ドロップダウンリストの画像(header.html内) */
+img.img-drop {
+    position: fixed;
+    top: 10;
+    border: 1px solid var(--bl);
+    padding: 2px;
+    border-radius: 6px;
+    
+}
+
+nav{
+    display: flex;
+    /* margin-left: auto; */
+    /* align-items: flex-end; */
+    margin-bottom: 30px;
+
+}
+ul.nav-ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+li.nav-li {
+    display: flex;
+    list-style: none;
+    margin-top: 60px;
+    margin-right: 30px;
+    /* justify-content: flex-end; */
+}
+a.nav-link {
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-size: var(--mm);
+    font-weight: 600;
+    color: var(--wh);
+}
+
+/* ハンバーガーナビ アイコン*/
+i.bi.bi-list{
+    color: var(--wh);
+    font-weight: bold;
+    font-size: var(--s);
+}
+/* ログイン中 */
+
+/* メッセージ　*/
+.container.mess {
+    height: 30px;
+}
+
+
+/* ---------- メイン　------------ */
+main {
+    padding-top: 0;
+    background: f8f9fa;
+    height: 100vh;
+}
+h1.header-h1{
+    text-align: center;
+    color:var(--bl);
+    font-size: 100px;
+    margin-top: 180px;
+    font-family: 'Abril Fatface', cursive;
+    animation: bgchange 13s ease infinite;
+}
+@keyframes bgchange{
+    0% {color: var(--bl);}
+    25% {color:#4f772d}
+    50% {color: #4361ee;}
+    75% {color: #df3b57;}
+    99% {color: #5a189a;}
+    100% {color: var(--bl);}
+}
+
+/* メインのaside */
+.container.index{
+    padding-left: 70px;
+}
+/* aside.input-data {
+    padding-top: 50px;
+    padding-left: 10px;
+} */
+h2.chara_h2{
+    margin: 20px 0;
+}
+th.aside-th{
+    color: var(__re);
+
+}
+td.aside-td{
+    color: var(__re);
+    width: 100px;
+    text-align: right;
+}
+
+/* ログイン中 ユーザー名表示　*/
+.login-user-h4 {
+    color: var(--bl);
+    font-size: var(--s);
+    margin-left: 350px;
+}
+.login-user-span {
+    margin-left: 10px;
+    color: var(--db);
+    font-size: var(--xs);
+}
+/* ログアウト中でデーター未入力 */
+h1.col-12.col-md-6.logout-no-data {
+    margin: 110px auto;
+    /* margin-left: 400px; */
+    font-size: 2rem;
+    color: var(--bl);
+}
+/*メッセージ*/
+li.alert.alert-success {
+    display: flex;
+    align-items: center;
+    width: 1080px;
+    height: 15px;
+
+}
+li.alert.alert-info {
+    display: flex;
+    align-items: center;
+    width: 1080px;
+    height: 15px;
+
+}
+li.alert.alert-warning {
+    display: flex;
+    align-items: center;
+    width: 1080px;
+    height: 15px;
+
+}
+li.alert.alert-danger {
+    display: flex;
+    align-items: center;
+    width: 1080px;
+    height: 15px;
+
+}
+
+
+
+/******************* カード関連　******************/
+
+/* loginのカード　*/
+.card.mt-5.mb-5.d-flex.align-items-center.mx-auto.login {
+    border: 1px solid var(--bl);
+    border-radius: 10px;
+} 
+/* login icon*/
+i.bi.bi-brightness-alt-high-fill.fs-1{
+    color: var(--re);
+}
+/* sighupのカード*/
+.card.mt-5.mb-5.d-flex.align-items-center.mx-auto.sighup {
+    border: 1px solid var(--bl);
+    border-radius: 10px;
+} 
+/* signup icon */
+i.bi.bi-moon-stars-fill.fs-3{
+    color: var(--mye);
+}
+/*フォーム*/
+.form-control {
+    width: 200px;
+}
+
+/* ログアウト　*/
+a.nav-li.logout {
+    color: var(--wh);
+    margin: 70px 50px 0 0;
+    text-decoration: none;
+}
+
+/* delete のカード */
+
+button.btn.btn-danger{
+    width:60px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+a.text-primary.a-delete{
+    text-decoration: none;
+}
+a.text-primary.a-delete:hover{
+    opacity: .5;
+    cursor: pointer;
+}
+
+.card.form {
+    margin: 20 auto;
+}
+.card.card-list{
+    margin-bottom: 20px;
+    margin-left: 20px;
+    width: 150px;
+}
+.card.firstinput.mt-5{
+    margin: 0 auto;
+}
+h3.signup.mt-3 {
+    color:var(--bl);
+    font-family: 'DM Serif Display', serif, 'Sawarabi Gothic', 'Abril Fatface','Montserrat', sans-serif;
+    letter-spacing: 3px;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+h3.login.mt-3 {
+    color:var(--bl);
+    font-family: 'DM Serif Display', serif, 'Abril Fatface','Montserrat', sans-serif;
+    letter-spacing: 3px;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+
+/* 詳細ページの削除ボタンの下の前へ戻る */
+a.text-primary.forward-a {
+    text-decoration: none;
+    margin-left: 45px;
+}
+
+/******************** フッター ***********************/
+
+footer{
+    background: #6930c3;
+    height: 100px;
+} 
+h2.footer-h2{
+    margin-left: 50px;
+} 
+/* icon */
+.i.bi-alarm{
+    font-size: 30px;
+    margin: 0 auto;
+}
+.col.col-12.col-md-6.d-flex.justify-content-center.mt-3{
+    margin: 0 auto;
+}
+
+i.bi.bi-twitter.me-3::before{
+    font-size: var(--s);
+    color: var(--wh);
+    margin-top: var(--xs);
+    margin-right:var(--xs);
+}
+i.bi.bi-instagram.me-3::before{
+    font-size: var(--s);
+    color: var(--wh);
+    margin-top: var(--xs);
+    margin-right:var(--xs);
+}
+i.bi.bi-linkedin.me-3::before{
+    font-size: var(--s);
+    color: var(--wh);
+    margin-top: var(--xs);
+    margin-right:var(--xs);
+}
+i.bi.bi-facebook.me-3::before{
+    font-size: var(--s);
+    color: var(--wh);
+    margin-top: var(--xs);
+    margin-right:var(--xs);
+}
+
+/********************* ページネーション　*****************/
+
+
+

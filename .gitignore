@@ -1,0 +1,11 @@
+mivenv
+db.sqlite3
+.DS_Store
+local_settings.py
+.env
+images
+media
+.vscode
+__pycache__
+mivenv
+*.pyc

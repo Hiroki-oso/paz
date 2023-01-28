@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main  %}
+<div class="row">
+      <div class="col col-lg col-md col-sm  mt-5 d-flex justify-content-center">
+            <div class="card delete-page" style="width: 32rem;">
+                  <div class="card-body">
+                  <h4 class="card-title text-danger">Warning</h4>
+                  <h3>データを削除してよろしいですか？</h3>
+                  <form method="POST">
+                        <div class="d-flex justify-content-center mt-5">
+                        {% csrf_token %}
+                        <button  action="" class="btn btn-danger" type="submit">削除</button>
+                        {% comment %} <a herf="{% url 'lifemanage:detail' user.pk %}" class="btn btn-primary cancel ms-5">キャンセル</a> {% endcomment %}
+                  </form>
+                  </div>
+                  <a href="{% url 'myapp:list' %}" class="text-primary a-delete">前のページへ</a> 
+                  </div>
+             </div>
+      </div>
+</div>
+{% endblock  %}

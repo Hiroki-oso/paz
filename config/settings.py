@@ -28,7 +28,7 @@ ALLOWED_HOSTS=['*']
 #     pass
 
 # ローカル用設定
-# if DEBUG = True:
+# if DEBUG:
 #    ALLOWED_HOSTS = ['*']
 #    env.read_env(os.path.join(BASE_DIR,'.env'))
 #    SECRET_KEY = env('SECRET_KEY')
